@@ -7,7 +7,6 @@ build: .pillar
 
 deploy: build
 	./scripts/prepare_for_deploy.sh
-	git checkout gh-pages
 	cd _result && git push -f origin gh-pages
 
 
