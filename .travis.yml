@@ -6,7 +6,7 @@ addons:
     - lib32z1
     - lib32bz2-1.0
     - libssl1.0.0:i386
-	- libfreetype6:i386
+    - libfreetype6:i386
 
 script:
 - if [[ ${TRAVIS_BRANCH} == "master" ]]; then make deploy; fi
