@@ -13,8 +13,8 @@ __base="$(basename ${__file} .sh)"
 __root="${__dir}/.." # <-- change this as it depends on your app
 
 
-cd ${__root}/_site
+cd ${__root}/_result/html
 git init
 git add .
-git commit -m "Generated from source branch: `cd .. && git log -1 --oneline`"
+git commit -m "Generated from source branch: `cd ${__root} && git log -1 --oneline`"
 git remote add origin "https://$GH_TOKEN@github.com/samakhov/Booklet-AMiniSchemeInPharo.git"
