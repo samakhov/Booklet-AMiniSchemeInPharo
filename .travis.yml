@@ -1,35 +1,16 @@
-language: smalltalk
-sudo: false
+language: c
+addons:
+  apt:
+    packages:
+    - libasound2:i386
+    - lib32z1
+    - lib32bz2-1.0
+    - libssl1.0.0:i386
+	- libfreetype6:i386
 
-os:
-  - linux
-
-smalltalk:
-  - Pharo-6.1
-
-# Unit tests run the normal pillar tests
-# Integration tests test that pillar itself can interact with generated files, pdf generation, etc.
-# System tests test that we can install and use pillar as a black box
-env:
-  matrix:
-  - JOB=test TYPE=System ARCHETYPE=book OUTPUT=pdf
-
-install:
-  # Pillar installation
-  - git clone https://github.com/pillar-markup/pillar.git  # Clone pillar
-  - cd pillar && ./scripts/build.sh && cd ..                              # Run pillar build script. Pillar will be built in `pwd`/build!
-  - . pillar/scripts/ci/ensure_latex.sh                                   # Install latex
-  - ./pillar/scripts/ci/ensure_book_dependencies.sh                       # Install latex dependencies required by pillar
-  
 script:
-  - ./pillar/build/pillar build pdf
+- if [[ ${TRAVIS_BRANCH} == "master" ]]; then make deploy; fi
 
-deploy:
-- provider: bintray
-  file: .bintray.json
-  on:
-    repo: SquareBracketAssociates/Booklet-AMiniSchemeInPharo
-  skip_cleanup: true
-  user: ducasse
-  key:
-    secure: RHcD1NoMnAE3dutCUDsJ/qLTVlMcKHOiu1nYd5NnCXq+Ti9A3ARl4TgUWUn3KFuR2ND0cnLsaZDtO66ylxK5tM5r60HxUtFDMmWTqUQHg7DuwZD7s4ipavTC1elSHd5jcnKRXvhtyK5VbmzGyA+IdJkJ0ZDSFy7csbKK7qYSU5luKkRGvfKgTLNeWrwksEKDnSH1sS9b0MdbXLvMGuEkFsasICZswEmIYMq3iWPzrcHoRRmTfZu+TMSzSe91YusVohcF1/0HHb9zLSKq1pNZ0YI/AukVvE8Cy4Rdq1ImHVUSjrPFtCxyrTXYoUJELMrR+gHwg+jtG4nBbj/4IT5bUM1qSiYWNIzUW11O3S5nop1/UnR2dPqaGjUAffFpqny7YyGLDyDHvxMRQTtrhoRWCNrzEcaBG38xs32xdVWyIkkZCkZusbRRj1gU+WUzKH5AZdLjk8+9Q2pXKfxS+D+w3Ypx7zfOx4OfvsxA62UV9vjprOgKIH22NPYxgQ4SOMzgkWPELXZhDWSRGnImurb+4fkUz8ReVb3phKrR7z6S9xRtt45gonp8TSlf/Q8y2FDzrp6kxb2eOCfu4CLCEv1eJy9RBoMaDWyzc6+GL4Zbm0phkEpExPBL0Et0SihHdmL7+0IEseyjkaO9MlbN5ctRlJjJ41FL3l0ISTnS6iph0VA=
+env:
+  global:
+secure: u8MOq56mbEtWimIUm7V3sn5yMD1Pgrph2DdvUPF8LcTi2u0Gr/phAPeKmCRZ98Aem/0uYDAwC8vNd85DQ6ZbBqqpzZSKLr4I5wc/4VCADGHMSCNENmrXxpqJQHNeoGgxmpnRSu4bESujkH267a1eNO0X7VRDNVMwz6TZUMsm2DxXbAD8jrjSvbjUeljxX2MOquM4v67n93j59K2a86eTKJya9Ptz1hsRLYn+RCZeCgFH3N29/TVf8ZwjylZvH5KoN9AnJjP2bFSFA7k22WSVYM9WCfYhWvi7R8rgum1pjmqjMDZ3PS+tlrS2I97hSc/qSTDf/eoQqcWA4gzRaaCWRs77n8rYNjohgFVOPm3Vs+G7xHUBRpAdoN1nIEHxzZenOvjGXxD4+zmvNHKar8xOs+fbHtX1s0EtSKwR5o14RTiFdBg/TkFOX9APWOHiietpEDxPk16jT15eP4AgqJTw6P9gHn215Q97+7Qaxcr4jbj2ro277WZWxyJkUn7Xajg/aX2k+gi0jZjiKHYZXEFa8JbJDiFZbD8qQFJeyEKdI8DCLXIe7CANk3aXXJpdzrpIkLnP6Flbf3EWABFIxixDqzWxrD5JQh9N05DKRxqrhJS02ueTVVYU4V3RzuRvVwhoVNFUN0yPjtrsFLRqrN5Xy5jkY/fDgqaHSWunjxaz6S0=
