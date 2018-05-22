@@ -12,5 +12,5 @@ The result from the latest successful Travis build can be found [on Bintray (PDF
 
 - Fork
 - Do pull Request
+- Just Test
 
-## To latex it locally
