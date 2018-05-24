@@ -1,6 +1,5 @@
 language: c
 sudo: false
-
 addons:
   apt:
     packages:
@@ -9,10 +8,10 @@ addons:
     - lib32bz2-1.0
     - libssl1.0.0:i386
     - libfreetype6:i386
-
 script:
 - if [[ ${TRAVIS_BRANCH} == "master" ]]; then make deploy; fi
-
 env:
-  global:
+  global: 
+  matrix:
+    secure: gr4DrmmZlHZGc2/1DmMCoe3XI76COp7AmKe0icuSw1ujm7CR0JxX1Z4Sza5GPWIo3zTcMccjppeFILPr8zEWKsl+iCVPfDOFRw2VSq3KZKAbgvdACYR3tZBunM5RnCTFQuDa0+rz0S8F0fXaM8A/dQL9bkV/qmm4VB1EgJAtDTjz0zx6pVfwhFy7D9UCHmbhqrTr1DadXVXcosVMNaoHdFAE/VU03DJvYBQRFhsb3cTdKr3NBf030fYbhLnayeFuY/CnOPy8G5N7gaHjNTq5tgktbc0WSQ8yh+CgxBFD0sXiG5LRI2YS64zjrLbFoQRGO+00dOj4WApOQEOyq8xwg+M4aHl3s6EDAvOsZTq1sgqG3HO7ee5/RA2bcPH2XEgAxH7D+U7C9SmqLYOdg2xH+F5xvA+TnuwnOSBEYwyOWUokN/+U3HLZs9bHrvQn+IQNHqSdogOg9w1/wz3VqOHoZat6ALPmzr63ASM/nvJ14ffefhAfaHuQ65G83PAr4e0UKtLcIJHqn1i0ceWa6yTQH19xCZq17AqUrgoZu2a5cs3zktutWnOJu5H9s6r0yZEPIdUCMEoDwoHm0rB/9JERMPBqi4cjRFpc/rGxJp3BR+9DTFq0/hiCEhkOLay3fgMK92ZbFf2RYwvbfBCX8vSFboHnKahmKctYumMH4i70lu0=
 secure: u8MOq56mbEtWimIUm7V3sn5yMD1Pgrph2DdvUPF8LcTi2u0Gr/phAPeKmCRZ98Aem/0uYDAwC8vNd85DQ6ZbBqqpzZSKLr4I5wc/4VCADGHMSCNENmrXxpqJQHNeoGgxmpnRSu4bESujkH267a1eNO0X7VRDNVMwz6TZUMsm2DxXbAD8jrjSvbjUeljxX2MOquM4v67n93j59K2a86eTKJya9Ptz1hsRLYn+RCZeCgFH3N29/TVf8ZwjylZvH5KoN9AnJjP2bFSFA7k22WSVYM9WCfYhWvi7R8rgum1pjmqjMDZ3PS+tlrS2I97hSc/qSTDf/eoQqcWA4gzRaaCWRs77n8rYNjohgFVOPm3Vs+G7xHUBRpAdoN1nIEHxzZenOvjGXxD4+zmvNHKar8xOs+fbHtX1s0EtSKwR5o14RTiFdBg/TkFOX9APWOHiietpEDxPk16jT15eP4AgqJTw6P9gHn215Q97+7Qaxcr4jbj2ro277WZWxyJkUn7Xajg/aX2k+gi0jZjiKHYZXEFa8JbJDiFZbD8qQFJeyEKdI8DCLXIe7CANk3aXXJpdzrpIkLnP6Flbf3EWABFIxixDqzWxrD5JQh9N05DKRxqrhJS02ueTVVYU4V3RzuRvVwhoVNFUN0yPjtrsFLRqrN5Xy5jkY/fDgqaHSWunjxaz6S0=
