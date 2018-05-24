@@ -7,7 +7,7 @@ build:	.pillar
 
 deploy:	build
 	./scripts/prepare_for_deploy.sh
-	cd _result && git push origin HEAD:gh-pages
+	cd _result && git push -f origin gh-pages
 
 
 clonedeploy:
