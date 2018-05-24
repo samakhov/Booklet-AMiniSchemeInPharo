@@ -2,10 +2,10 @@
 	git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7
 	cd .pillar && ./scripts/build.sh && cd ..
 
-build: .pillar
+build:	.pillar
 	.pillar/build/pillar build html
 
-deploy: build
+deploy:	build
 	./scripts/prepare_for_deploy.sh
 	cd _result && git push -f origin gh-pages
 
