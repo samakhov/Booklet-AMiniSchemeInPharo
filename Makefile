@@ -1,5 +1,5 @@
 .pillar:
-	git clone https://github.com/pillar-markup/pillar.git .pillar -b fix/toc-unit-tests
+	git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7
 	cd .pillar && ./scripts/build.sh && cd ..
 
 build:	.pillar
