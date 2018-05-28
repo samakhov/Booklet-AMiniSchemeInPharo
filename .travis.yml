@@ -10,6 +10,3 @@ addons:
     - libfreetype6:i386
 script:
 - if [[ ${TRAVIS_BRANCH} == "master" ]]; then make deploy; fi
-env:
-  matrix:
-    secure: WUiLy8UwgSKPimdSRvktH49mQsevc7HiQXJ6IX4XuiwGt37Shq2NJ0xgx0Y94kKoUqA7bfEF3V7sO4zE9QMZGkI05ngvq0J/FiTrqiSsyqoYsDFxCYpYgsrRF73pbrE26qyNDXI1fHJmL+a5pLNB0TRLKH5pLuFd9ebD0MDixmHjbW+gdHfeRk+Wy9igQaHqzIny4y6ifegm4SptqHR2sm0gM219CnTtFEmf+I0m5f+ys4HMwG014ypRiqcKpTXlqPhgVYy0ulpRxy6HC9FcX0HG/qgwTMo+k+BUoH0YkjQqFeJsOgk7IGhqV+hJ9Yq7hIn6uhGf66a/juxKFiTZsLyittKKXLLpuLAtbr9iGZaPhp6fZuZqSOMLKqyV5ubjBdpjysn8vp4eRTFCSSheJLMtTTMPL9PfWkB1eZSZXQkOVkj8ZtMi+daDeXMSTWwOjWU7lrJJvGRTSVvuK10gEYSH3S9chORlOJ5/QhFLqX/QLLzE6KcGbQmjOZAK8OitF3928wSdoeNrbRTdDgkRTKEi/nWQJ/ijuIzkWA8pOTz/XKwfACW0OrvEWll3jJei/unlqSaa0pjPe7itjq8VDA1xjq3z/razgZXyErrHMwfkdzHMtJndH7Z49vs2v1r+IZEBxzbpdZjJJESyy/6egTtj5uqeFN9B7sUjKyqhSy8=
