@@ -17,6 +17,6 @@ cd ${__root}/_result/html
 git init
 git add .
 git commit -m "Generated from source branch: `cd ${__root} && git log -1 --oneline`"
-git remote add origin "git@github.com:samakhov/Booklet-AMiniSchemeInPharo.git"
+git remote add origin "https://$GH_TOKEN@github.com/samakhov/Booklet-AMiniSchemeInPharo.git"
 git fetch
 echo "GH PAGES Setup finished"
