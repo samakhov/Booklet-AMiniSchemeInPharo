@@ -1,5 +1,4 @@
 language: c
-sudo: false
 addons:
   apt:
     packages:
@@ -10,3 +9,6 @@ addons:
     - libfreetype6:i386
 script:
 - if [[ ${TRAVIS_BRANCH} == "master" ]]; then make deploy; fi
+env:
+  global:
+    secure: Y6K0Es9R3cHjgLoX5SJty63wNByobFWJl1O/4P6jd3r3h1KSL1q0klZeaJhAO2VXvVgg88aPLjl7do8RagLasSoDt7aFp5BUd0kjK51JOk3ZsaM1WgUNch7212OZpeABdenpPV6rrj9otrzTeM0P7kA1AeToazgl7KxGBuFttVomGEGJcSzMpwQ2cKhm5RRyWJm7guy0Azl7ibTdevLRya1kW5S0H6fcJXAJg5xklMIQEuoyHyCuMsplB4r4ikuRcuW+KigVPAyDc/kE/gWMIX/BF3/GCO+hnLCabFWNaoGJkYwbKhsTLVIxDLUKU3yDcCIFmwjMlp0C/91YXSxQbRPtrVxqLW1QxXJltAxZb7Ac6DgljN4JccrPG/NuJ7Nfo2Hu7HWvxZO2wV3r3ror9oxGj6MLODacv3lMcqBAPruHLuCVYrdO3KnV36LOaiLYdMQW8CIqH5apPPdIlMeqNkmW6S1dKXXih+xYi7AUkVsJiB8uUp+gb1mMOwczkmjCb6vg8tK9omjSDO06InPe2Nfa4xCeni3QtnIPpkYy87GuUujroZDO2j9seCBRyuQodEUsNUawnOmakN/PzfH0YltmpUCyd5hxeal8vN9jkapc8RLLcq8NE5GJBat8JDHR13APl1WJkmBegrW17xTE0rG0aGLA625S7zpCauwYWQo=
