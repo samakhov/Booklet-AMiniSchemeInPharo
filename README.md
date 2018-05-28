@@ -3,8 +3,8 @@ Describe the implementation  a little scheme interpreter in Pharo as pretext to 
 
 [![Build status][badge]][travis]
 
-[travis]: https://travis-ci.org/SquareBracketAssociates/Booklet-AMiniSchemeInPharo
-[badge]: https://travis-ci.org/SquareBracketAssociates/Booklet-AMiniSchemeInPharo.svg?branch=master
+[travis]: https://travis-ci.org/samakhov/Booklet-AMiniSchemeInPharo
+[badge]: https://travis-ci.org/samakhov/Booklet-AMiniSchemeInPharo.svg?branch=master
 
 The result from the latest successful Travis build can be found [on Bintray (PDF)](https://bintray.com/squarebracketassociates/wip/download_file?file_path=minischemebook-wip.pdf).
 
