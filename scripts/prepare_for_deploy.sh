@@ -16,8 +16,7 @@ __root="${__dir}/.." # <-- change this as it depends on your app
 # The repository send as parameter where html files are located
 if [ $#==0 ]
 then 
-  echo "Repository name expected"
-  exit
+  echo "parameter missing: Repository name expected"
 else 
   __site=$1
 fi
