@@ -11,9 +11,10 @@ __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 __file="${__dir}/$(basename "${BASH_SOURCE[0]}")"
 __base="$(basename ${__file} .sh)"
 __root="${__dir}/.." # <-- change this as it depends on your app
+__site="_result/html"
 
 
-cd ${__root}/_result/html
+cd ${__root}/${__site}
 touch .nojekyll
 git init
 git add .
