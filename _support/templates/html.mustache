@@ -27,15 +27,15 @@
   <aside>
     <ul class="menu">
    		<li data-nav-id="123" class="dd-item">
-    		<a href="{{base_url}}/book.html">
+    		<a href="{{base_url}}">
 		       <i class="fa fa-fw fa-home"></i>
 	    	</a>
         </li>
 
-		{{# toc}}{{# children}}
+		{{# toc.children }}
 		  <li class="dd-item {{# hasChildren}} haschildren {{/ hasChildren}}">
 			<div>
-			  <a href="{{base_url}}{{href}}">
+			  <a href="{{parent.parent.base_url}}{{href}}">
 					{{name}}
 			  </a>
 			  {{# hasChildren}} <i class="fa fa-angle-right fa-lg category-icon"></i> {{/ hasChildren}}
@@ -44,8 +44,8 @@
 				{{# children }}
 		   	  	<li class="dd-item {{# hasChildren}} haschildren {{/ hasChildren}}">
 					<div>
-						<a href="{{../base_url}}{{href}}">
-							{{name}}{{../base_url}}
+						<a href="{{href}}">
+							{{name}}
 						</a>
 						{{# hasChildren}}<i class="fa fa-angle-right fa-lg category-icon"></i>{{/ hasChildren}}
 					</div>
@@ -53,7 +53,7 @@
 					<ul class="dd-item">
 					{{# children }}		
 						<li class="dd-item">
-							<a href="{{../base_url}}{{href}}">{{name}}</a>
+							<a href="{{href}}">{{name}}</a>
 						</li>
 					{{/ children }}
 					</ul>						
@@ -62,7 +62,7 @@
 			  </ul>
 		  
 		  </li>
-		{{/ children}}{{/ toc}}
+		{{/ toc.children }}
     </ul>
   </aside>
 
