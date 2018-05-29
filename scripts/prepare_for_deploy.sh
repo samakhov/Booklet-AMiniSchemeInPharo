@@ -14,7 +14,7 @@ __root="${__dir}/.." # <-- change this as it depends on your app
 
 
 # The repository send as parameter where html files are located
-if $1; then __site=$1; else echo "Repository name expected"; fi
+if $#=1; then __site=$1; else echo "Repository name expected"; fi
 
 cd ${__root}/${__site}
 touch .nojekyll
