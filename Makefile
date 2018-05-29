@@ -1,3 +1,5 @@
+SITE=_result/html
+
 .pillar:
 	git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7
 	cd .pillar && ./scripts/build.sh && cd ..
@@ -7,9 +9,8 @@ build:	.pillar
 
 deploy:	build
 	./scripts/prepare_for_deploy.sh
-	export site=_result/html
+	echo $(SITE)
 	# Added HEAD as suggested in https://stackoverflow.com/questions/4181861/src-refspec-master-does-not-match-any-when-pushing-commits-in-git
-	echo $site
 	cd _result/html && git push -f origin HEAD:gh-pages
 
 
