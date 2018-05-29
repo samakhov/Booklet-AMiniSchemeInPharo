@@ -11,14 +11,12 @@ __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 __file="${__dir}/$(basename "${BASH_SOURCE[0]}")"
 __base="$(basename ${__file} .sh)"
 __root="${__dir}/.." # <-- change this as it depends on your app
-__site="_result/html"
 
 
-cd ${__root}/${__site}
+cd ${__root}/$1
 touch .nojekyll
 git init
 git add .
 git commit -m "Generated from source branch: `cd ${__root} && git log -1 --oneline`"
 git remote add origin "https://$GH_TOKEN@github.com/${TRAVIS_REPO_SLUG}.git"
-git fetch
 echo "GH PAGES Setup finished"
